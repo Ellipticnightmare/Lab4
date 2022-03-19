@@ -9,4 +9,9 @@ public class BulletController : MonoBehaviour
     {
         thisHolder = actor;
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        thisHolder.firedBullet = null;
+        Destroy(this.gameObject);
+    }
 }

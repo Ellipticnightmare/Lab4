@@ -6,8 +6,10 @@ public class ActorController : MonoBehaviour
 {
     public BulletController firedBullet;
     public GameObject bulletFab;
-    public virtual void fireBullet()
+    public virtual void fireBullet(Transform firePoint)
     {
-
+        GameObject newBullet = Instantiate(bulletFab, firePoint.position, firePoint.rotation);
+        firedBullet = newBullet.GetComponent<BulletController>();
+        firedBullet.Setup(this);
     }
 }

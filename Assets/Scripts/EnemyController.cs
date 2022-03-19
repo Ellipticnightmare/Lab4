@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class EnemyController : ActorController
 {
-    // Start is called before the first frame update
-    void Start()
+    public int score;
+    public void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.CompareTag("Bullet"))
+        {
+            GameManager.HitEnemy(score);
+            Destroy(this.gameObject);
+        }
     }
 }
