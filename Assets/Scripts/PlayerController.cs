@@ -10,12 +10,17 @@ public class PlayerController : ActorController
     [Range(1, 6)]
     public float speed = 1.7f;
     public Transform firePoint;
+    [Range(1, 10)]
+    public float invincibilityTimer = 1;
+    public static bool isShield;
     private void Start()
     {
         chara = this.GetComponent<CharacterController>();
     }
     private void Update()
     {
+        if (invincibilityTimer >= 0)
+            invincibilityTimer -= Time.deltaTime;
         horizontalDetect = Input.GetAxisRaw("Horizontal");
         verticalDetect = Input.GetAxisRaw("Vertical");
         chara.Move(transform.up * speed * verticalDetect * Time.deltaTime);
@@ -29,7 +34,7 @@ public class PlayerController : ActorController
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet") && invincibilityTimer <= 0)
             GameManager.TakeHit();
     }
 }
