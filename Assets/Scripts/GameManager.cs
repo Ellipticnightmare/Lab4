@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public enemyKillData[] enemyKillDataStorage;
     [Header("DON'T ASSIGN")]
     public int basicEnemyKillCount, fastEnemyKillCount;
+    public GameObject results;
     private void Start()
     {
         lives = PlayerPrefs.GetInt("Lives");
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", score);
         //Run Game Over logic here, for results screen and such, etc etc
+        results.SetActive(true);
     }
     public static void HitEnemy(int score, string enemyName)
     {
@@ -54,6 +56,15 @@ public class GameManager : MonoBehaviour
             enemyKillDataStorage[0].enemyKillCount++;
         else
             enemyKillDataStorage[1].enemyKillCount++;
+    }
+    public void CloseResults()
+    {
+        results.SetActive(false);
+    }
+    public void LoadMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        
     }
 }
 [System.Serializable]
