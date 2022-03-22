@@ -8,24 +8,19 @@ public class PlayerController : ActorController
     CharacterController chara;
     float horizontalDetect, verticalDetect;
     [Range(1, 6)]
-    public float speed = 1.7f;
+    public int speed = 1;
     public Transform firePoint;
-    [Range(1, 10)]
-    public float invincibilityTimer = 1;
-    public static bool isShield;
     private void Start()
     {
         chara = this.GetComponent<CharacterController>();
     }
     private void Update()
     {
-        if (invincibilityTimer >= 0)
-            invincibilityTimer -= Time.deltaTime;
         horizontalDetect = Input.GetAxisRaw("Horizontal");
         verticalDetect = Input.GetAxisRaw("Vertical");
-        chara.Move(transform.up * speed * verticalDetect * Time.deltaTime);
+        chara.Move(new Vector3(0, 0, verticalDetect) * speed * Time.deltaTime);
 
-        this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * 100 * Time.deltaTime));
+        this.gameObject.transform.Rotate(new Vector3(0, horizontalDetect * speed * Time.deltaTime, 0));
     }
     public override void fireBullet(Transform firePoint)
     {
@@ -34,7 +29,7 @@ public class PlayerController : ActorController
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Bullet") && invincibilityTimer <= 0)
+        if (other.CompareTag("Bullet"))
             GameManager.TakeHit();
     }
 }

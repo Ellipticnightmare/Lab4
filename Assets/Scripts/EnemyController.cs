@@ -9,7 +9,7 @@ public class EnemyController : ActorController
     {
         if (other.CompareTag("Bullet"))
         {
-            GameManager.HitEnemy(score, this.gameObject.name);
+            GameManager.HitEnemy(score);
             Destroy(this.gameObject);
         }
     }
