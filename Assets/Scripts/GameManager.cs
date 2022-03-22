@@ -8,20 +8,7 @@ public class GameManager : MonoBehaviour
     public int score;
     public static void TakeHit()
     {
-        if (!PlayerController.isShield)
-            FindObjectOfType<GameManager>().KillPlayer();
-        else
-            PlayerController.isShield = false;
-    }
-    public void KillPlayer()
-    {
-        lives--;
-        PlayerPrefs.SetInt("Lives", lives);
-        PlayerPrefs.SetInt("Score", score);
-        if (lives >= 0)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        else
-            GameOver();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public static void HitEnemy(int score)
     {
