@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Lives", lives);
         PlayerPrefs.SetInt("Score", score);
         if (lives >= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         else
             GameOver();
     }

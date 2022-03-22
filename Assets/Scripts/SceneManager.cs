@@ -17,7 +17,7 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
         if (results == null)
         {
-            results = FindObjectOfType<GameObject>().name == "ResultsScreen";
+            results = GameObject.Find("ResultsScreen");
         }
     }
 
