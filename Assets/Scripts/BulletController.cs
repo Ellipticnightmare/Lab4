@@ -35,7 +35,6 @@ public class BulletController : MonoBehaviour
         {
             gameMgr.GameOver();
         }
-        Debug.Log("bullet hit");
         DestroyBullet();
     }
     public void DestroyBullet()

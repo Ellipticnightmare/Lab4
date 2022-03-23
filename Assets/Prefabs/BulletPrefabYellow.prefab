@@ -145,3 +145,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisHolder: {fileID: 0}
+  gameMgr: {fileID: 0}
+  bulletLifeTime: 3

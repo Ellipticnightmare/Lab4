@@ -49,7 +49,7 @@ public class PlayerController : ActorController
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SoundManager.fireSFX(shoot);
+            //SoundManager.fireSFX(shoot);
             fireBullet(firePoint);
         }
     }
