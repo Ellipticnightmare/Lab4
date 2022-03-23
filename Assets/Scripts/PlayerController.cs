@@ -14,14 +14,13 @@ public class PlayerController : ActorController
     public float invincibilityTimer = 1;
     public static bool isShield;
 
-    AudioSource plyShoot;
-    AudioSource plyMove;
+    public AudioSource plyMove;
+    public AudioClip shoot;
     bool isMoving = false;
 
     private void Start()
     {
         chara = this.GetComponent<CharacterController>();
-        plyShoot = GetComponent<AudioSource>();
         plyMove = GetComponent<AudioSource>();
     }
     private void Update()
@@ -34,26 +33,23 @@ public class PlayerController : ActorController
 
         this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * 100 * Time.deltaTime));
 
-        if(verticalDetect != 0)
+        if (verticalDetect != 0)
             isMoving = true;
         else
             isMoving = false;
         if (isMoving)
         {
-          if (!plyMove.isPlaying)
-          plyMove.Play();
+            if (!plyMove.isPlaying)
+                plyMove.Play();
 
         }
         else
-          plyMove.Stop();
+            plyMove.Stop();
 
         if (Input.GetKeyDown("space"))
         {
-            //if ()
-            //{
-              plyShoot.Play();
-            //}
-              fireBullet(firePoint);
+            SoundManager.fireSFX(shoot);
+            fireBullet(firePoint);
         }
     }
     public override void fireBullet(Transform firePoint)
