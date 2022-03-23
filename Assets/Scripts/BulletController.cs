@@ -23,4 +23,8 @@ public class BulletController : MonoBehaviour
         thisHolder.firedBullet = null;
         Destroy(this.gameObject);
     }
+
+    public void OnBecameInvisible() {
+         Destroy(gameObject);
+     }
 }
