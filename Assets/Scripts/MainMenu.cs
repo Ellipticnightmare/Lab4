@@ -12,25 +12,16 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("Lives", 3);
         PlayerPrefs.SetInt("curScore", 0);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        PlayerPrefs.SetInt("BasicKill", 0);
+        PlayerPrefs.SetInt("FastKill", 0);
+        SceneManager.LoadScene("SampleScene");
     }
-    public void HitQuit()
-    {
-        Application.Quit();
-    }
+    public void HitQuit() => Application.Quit();
 
     private void Update()
     {
         int scoreVal = PlayerPrefs.GetInt("HighScore");
         highScoreText.text = (scoreVal.ToString("000000"));
     }
-    public void OpenInstructions()
-    {
-        instructions.SetActive(true);
-    }
-
-    public void CloseInstructions()
-    {
-        instructions.SetActive(false);
-    }
+    public void ToggleInstructions() => instructions.SetActive(!instructions.activeInHierarchy);
 }
