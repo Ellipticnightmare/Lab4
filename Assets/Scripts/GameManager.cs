@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public NavMeshSurface2d Surface2D;
     public int score;
     public GameObject resultsUI;
     int lives;
     public enemyKillData[] enemyKillDataStorage;
     int basicEnemyKillCount, fastEnemyKillCount;
+    public Text RedEnemyKilled, RedEnemyScoreValue, GreenEnemyKilled, GreenEnemyScoreValue, TotalScoreValue;
     private void Start()
     {
         lives = PlayerPrefs.GetInt("Lives");
@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     {
         basicEnemyKillCount = enemyKillDataStorage[0].enemyKillCount;
         fastEnemyKillCount = enemyKillDataStorage[1].enemyKillCount;
+        RedEnemyKilled.text = fastEnemyKillCount.ToString();
+        RedEnemyScoreValue.text = 325 + "";
+        GreenEnemyKilled.text = basicEnemyKillCount.ToString();
+        GreenEnemyScoreValue.text = 150 + "";
+        TotalScoreValue.text = score + "";
     }
     public static void TakeHit()
     {
@@ -48,18 +53,19 @@ public class GameManager : MonoBehaviour
         Debug.Log("game over!");
         if (score > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", score);
-        //Run Game Over logic here, for results screen and such, etc etc
+        Time.timeScale = 0;
         resultsUI.SetActive(true);
 
     }
     public void ReloadGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+        resultsUI.SetActive(false);
         PlayerPrefs.SetInt("Lives", 3);
         PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("BasicKill", 0);
         PlayerPrefs.SetInt("FastKill", 0);
-        resultsUI.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     public void LoadMainMenu()
     {

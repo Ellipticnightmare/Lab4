@@ -174,6 +174,6 @@ MonoBehaviour:
   bulletFab: {fileID: 2336424168314146474, guid: 1c1485e9a1717774392920a85ac783a7,
     type: 3}
   firePoint: {fileID: 299387144741357947}
-  score: 150
+  score: 325
   speed: 3.5
   rotSpeed: 5
