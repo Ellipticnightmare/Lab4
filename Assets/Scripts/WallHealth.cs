@@ -6,7 +6,7 @@ public class WallHealth : MonoBehaviour
 {
     public Sprite[] wallSprites; 
     int maxHealth = 3;
-    int currentHealth = 3;
+    public int currentHealth = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +20,12 @@ public class WallHealth : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if(collision.transform.tag == "bullet")
+        if(col.transform.tag == "bullet")
         {
             currentHealth--;
         }
