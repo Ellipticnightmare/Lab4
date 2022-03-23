@@ -8,7 +8,7 @@ public class EnemyController : ActorController
 {
     enemyState EnemyState = enemyState.Chase;
     public int score;
-    Transform targPos;
+    public Transform targPos;
     float updateTarg;
     NavMeshPath path;
     NavMeshAgent agent;
@@ -16,8 +16,10 @@ public class EnemyController : ActorController
     public float speed = 2.25f;
     [Range(1, 10)]
     public float rotSpeed = 5;
+    public GameObject art;
     private void Start()
     {
+        path = new NavMeshPath();
         EnemyState = GetRandomEnum<enemyState>();
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -49,6 +51,12 @@ public class EnemyController : ActorController
                 moveAttack();
                 break;
         }
+
+        var lookPos = targPos.position - art.transform.position;
+        Quaternion lookRot = Quaternion.LookRotation(lookPos);
+        float eulerZ = lookRot.eulerAngles.z;
+        Quaternion rotation = Quaternion.Euler(0, 0, eulerZ);
+        art.transform.rotation = rotation;
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -61,7 +69,7 @@ public class EnemyController : ActorController
     #region Chasing Logic //Moving after player until they are spotted, then swapping to Hunting
     void moveChase()
     {
-        NavMesh.CalculatePath(transform.position, targPos.position, NavMesh.AllAreas, path);
+        agent.SetDestination(targPos.position);
         if (canSeeTarget())
             EnemyState = enemyState.Hunt;
     }
@@ -69,7 +77,7 @@ public class EnemyController : ActorController
     #region Hunting Logic //Actively pursuing the player and trying to kill them
     void moveHunt()
     {
-        NavMesh.CalculatePath(transform.position, targPos.position, NavMesh.AllAreas, path);
+        agent.SetDestination(targPos.position);
         if (agent.remainingDistance <= 20 && canSeeTarget())
             fireBullet(firePoint);
     }
@@ -77,8 +85,8 @@ public class EnemyController : ActorController
     #region Attacking Logic //Moving directly after Headquarters
     void moveAttack()
     {
-        NavMesh.CalculatePath(transform.position, targPos.position, NavMesh.AllAreas, path);
-        if(agent.remainingDistance <= 20 && canSeeTarget())
+        agent.SetDestination(targPos.position);
+        if (agent.remainingDistance <= 20 && canSeeTarget())
             fireBullet(firePoint);
     }
     #endregion

@@ -40,7 +40,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9137736651119144560}
   - component: {fileID: 9137736651119144527}
-  - component: {fileID: 9137736651119144526}
   - component: {fileID: 9137736651119144525}
   - component: {fileID: 9137736651119144524}
   - component: {fileID: 425761756}
@@ -118,25 +117,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &9137736651119144526
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9137736651119144523}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 57350a50d0689694db50a71f0e595818, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!143 &9137736651119144525
 CharacterController:
   m_ObjectHideFlags: 0
