@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9137736651119144526}
   - component: {fileID: 9137736651119144525}
   - component: {fileID: 9137736651119144524}
+  - component: {fileID: 425761761}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -138,6 +139,22 @@ MonoBehaviour:
   firedBullet: {fileID: 0}
   bulletFab: {fileID: 8697918643380719704, guid: 9084d75227ace10458f43f13279ed457,
     type: 3}
-  speed: 1.7
+  speed: 2.8
   firePoint: {fileID: 9137736651119144560}
   invincibilityTimer: 1
+--- !u!114 &425761761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137736651119144523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ee9a6ecbc71d948ac058501763554c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  enemyKillDataStorage: []
+  basicEnemyKillCount: 0
+  fastEnemyKillCount: 0

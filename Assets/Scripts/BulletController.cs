@@ -6,6 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public ActorController thisHolder;
+    public GameManager gameMgr;
 
     private void Update()
     {
@@ -16,9 +17,14 @@ public class BulletController : MonoBehaviour
     {
         thisHolder = actor;
         transform.rotation = thisHolder.transform.rotation;
+        gameMgr = thisHolder.GetComponent<GameManager>();
     }
     public void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("base"))
+        {
+            gameMgr.GameOver();
+        }
         Debug.Log("bullet hit");
         thisHolder.firedBullet = null;
         Destroy(this.gameObject);

@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        basicEnemyKillCount = enemyKillDataStorage[0].enemyKillCount;
-        fastEnemyKillCount = enemyKillDataStorage[1].enemyKillCount;
+        //disabled for now cus it was just giving 1000000 array exceptions
+        //basicEnemyKillCount = enemyKillDataStorage[0].enemyKillCount;
+        //fastEnemyKillCount = enemyKillDataStorage[1].enemyKillCount;
     }
     public static void TakeHit()
     {
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        Debug.Log("game over!");
         if (score > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", score);
         //Run Game Over logic here, for results screen and such, etc etc
