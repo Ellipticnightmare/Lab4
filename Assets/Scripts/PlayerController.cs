@@ -30,9 +30,9 @@ public class PlayerController : ActorController
             invincibilityTimer -= Time.deltaTime;
         horizontalDetect = Input.GetAxisRaw("Horizontal");
         verticalDetect = Input.GetAxisRaw("Vertical");
-        chara.Move(transform.up * speed * verticalDetect * Time.deltaTime);
+        chara.Move(transform.forward * speed * verticalDetect * Time.deltaTime);
 
-        this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * (rotSpeed + 80) * Time.deltaTime));
+        this.gameObject.transform.Rotate(new Vector3(0, horizontalDetect * speed * (rotSpeed + 80) * Time.deltaTime, 0));
 
         if (verticalDetect != 0)
             isMoving = true;

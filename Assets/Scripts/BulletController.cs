@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += transform.up * Time.deltaTime * 10;
+        transform.position += transform.forward * Time.deltaTime * 10;
         if (lifeTime >= 0)
             lifeTime -= Time.deltaTime;
         else
@@ -29,12 +29,10 @@ public class BulletController : MonoBehaviour
         transform.rotation = thisHolder.transform.rotation;
         gameMgr = thisHolder.GetComponent<GameManager>();
     }
-    public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerEnter(Collider other)
     {
-        if (col.CompareTag("base"))
-        {
+        if (other.CompareTag("base"))
             gameMgr.GameOver();
-        }
         DestroyBullet();
     }
     public void DestroyBullet()

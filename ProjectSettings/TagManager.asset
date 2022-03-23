@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bullet
   - base
   - baseTarget
   - navmesh
+  - Bullet
   layers:
   - Default
   - TransparentFX

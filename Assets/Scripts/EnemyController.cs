@@ -10,20 +10,15 @@ public class EnemyController : ActorController
     public int score;
     public Transform targPos;
     float updateTarg;
-    NavMeshPath path;
     NavMeshAgent agent;
     [Range(1, 10)]
     public float speed = 2.25f;
     [Range(1, 10)]
     public float rotSpeed = 5;
-    public GameObject art;
     private void Start()
     {
-        path = new NavMeshPath();
         EnemyState = GetRandomEnum<enemyState>();
         agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
         if (EnemyState == enemyState.Attack)
             targPos = GameObject.FindGameObjectWithTag("baseTarget").transform;
         else
@@ -51,12 +46,6 @@ public class EnemyController : ActorController
                 moveAttack();
                 break;
         }
-
-        var lookPos = targPos.position - art.transform.position;
-        Quaternion lookRot = Quaternion.LookRotation(lookPos);
-        float eulerZ = lookRot.eulerAngles.z;
-        Quaternion rotation = Quaternion.Euler(0, 0, eulerZ);
-        art.transform.rotation = rotation;
     }
     public void OnTriggerEnter(Collider other)
     {
