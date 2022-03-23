@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 04c79daea2d91c7418e31b00e936a1de
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7944286399514571038
+    second: EnemyTankGreen_0
+  - first:
+      213: -2663080635952125088
+    second: EnemyTankGreen_1
+  - first:
+      213: -369045500745873519
+    second: EnemyTankGreen_2
+  - first:
+      213: -6348670667358259528
+    second: EnemyTankGreen_3
+  - first:
+      213: -3060360274302461560
+    second: EnemyTankGreen_4
+  - first:
+      213: -2219051567362021160
+    second: EnemyTankGreen_5
+  - first:
+      213: 1063586252890873975
+    second: EnemyTankGreen_6
+  - first:
+      213: -6457677416665065243
+    second: EnemyTankGreen_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +113,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: EnemyTankGreen_0
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 173
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee87fa3c9930c190800000000000000
+      internalID: -7944286399514571038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_1
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 173
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b2add6546da0bd0800000000000000
+      internalID: -2663080635952125088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 184
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19706168213e0eaf0800000000000000
+      internalID: -369045500745873519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_3
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 104
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b63b2c2aadf4e7a0800000000000000
+      internalID: -6348670667358259528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 89
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8891c758b8a6785d0800000000000000
+      internalID: -3060360274302461560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 89
+        width: 38
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8ec154b585431e0800000000000000
+      internalID: -2219051567362021160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 18
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770ac87df0e92ce00800000000000000
+      internalID: 1063586252890873975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyTankGreen_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 18
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8dd919a98b166a0800000000000000
+      internalID: -6457677416665065243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
