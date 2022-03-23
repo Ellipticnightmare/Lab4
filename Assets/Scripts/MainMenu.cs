@@ -14,7 +14,11 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("curScore", 0);
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
-    public void HitQuit() => Application.Quit();
+    public void HitQuit()
+    {
+        Application.Quit();
+    }
+
     private void Update()
     {
         int scoreVal = PlayerPrefs.GetInt("HighScore");

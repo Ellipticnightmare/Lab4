@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int score;
+    public GameObject resultsUI;
     int lives;
     public enemyKillData[] enemyKillDataStorage;
     [Header("DON'T ASSIGN")]
@@ -44,6 +45,18 @@ public class GameManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", score);
         //Run Game Over logic here, for results screen and such, etc etc
+        resultsUI.SetActive(true);
+
+    }
+    public void ReloadGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+        resultsUI.SetActive(false);
+    }
+    public void LoadMainMenu()
+    {
+        resultsUI.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
     }
     public static void HitEnemy(int score, string enemyName)
     {

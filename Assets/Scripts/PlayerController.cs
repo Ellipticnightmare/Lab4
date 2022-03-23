@@ -21,8 +21,8 @@ public class PlayerController : ActorController
     private void Start()
     {
         chara = this.GetComponent<CharacterController>();
-        plyShoot = GetComponent<AudioSource>();
-        plyMove = GetComponent<AudioSource>();
+       // plyShoot = GetComponent<AudioSource>();
+        //plyMove = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -38,22 +38,24 @@ public class PlayerController : ActorController
             isMoving = true;
         else
             isMoving = false;
-        if (isMoving)
-        {
-          if (!plyMove.isPlaying)
-          plyMove.Play();
+       // if (isMoving)
+       // {
+        //  if (!plyMove.isPlaying)
+        //  plyMove.Play();
 
-        }
-        else
-          plyMove.Stop();
+       // }
+       // else
+         // plyMove.Stop();
 
         if (Input.GetKeyDown("space"))
         {
-            //if ()
-            //{
-              plyShoot.Play();
-            //}
-              fireBullet(firePoint);
+            
+            if (firedBullet == null)
+            {
+           // plyShoot.Play();
+            }
+            fireBullet(firePoint);
+
         }
     }
     public override void fireBullet(Transform firePoint)
