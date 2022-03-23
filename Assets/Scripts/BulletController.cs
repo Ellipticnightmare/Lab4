@@ -17,8 +17,9 @@ public class BulletController : MonoBehaviour
         thisHolder = actor;
         transform.rotation = thisHolder.transform.rotation;
     }
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("bullet hit");
         thisHolder.firedBullet = null;
         Destroy(this.gameObject);
     }
