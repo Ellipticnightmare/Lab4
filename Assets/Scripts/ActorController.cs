@@ -6,6 +6,7 @@ public class ActorController : MonoBehaviour
 {
     public BulletController firedBullet;
     public GameObject bulletFab;
+    public Transform firePoint;
     public virtual void fireBullet(Transform firePoint)
     {
         GameObject newBullet = Instantiate(bulletFab, firePoint.position, firePoint.rotation);

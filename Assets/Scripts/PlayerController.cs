@@ -9,7 +9,8 @@ public class PlayerController : ActorController
     float horizontalDetect, verticalDetect;
     [Range(1, 6)]
     public float speed = 1.7f;
-    public Transform firePoint;
+    [Range(1, 10)]
+    public float rotSpeed = 5;
     [Range(1, 10)]
     public float invincibilityTimer = 1;
     public static bool isShield;
@@ -31,7 +32,7 @@ public class PlayerController : ActorController
         verticalDetect = Input.GetAxisRaw("Vertical");
         chara.Move(transform.up * speed * verticalDetect * Time.deltaTime);
 
-        this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * 100 * Time.deltaTime));
+        this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * (rotSpeed + 80) * Time.deltaTime));
 
         if (verticalDetect != 0)
             isMoving = true;
