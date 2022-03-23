@@ -1,4 +1,4 @@
- ﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +26,10 @@ public class PlayerController : ActorController
         chara.Move(transform.up * speed * verticalDetect * Time.deltaTime);
 
         this.gameObject.transform.Rotate(new Vector3(0, 0, -horizontalDetect * speed * 100 * Time.deltaTime));
+        if (Input.GetKeyDown("space"))
+        {
+            fireBullet(firePoint);
+        }
     }
     public override void fireBullet(Transform firePoint)
     {

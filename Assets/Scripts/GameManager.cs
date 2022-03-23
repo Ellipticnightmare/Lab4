@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Lives", lives);
         PlayerPrefs.SetInt("Score", score);
         if (lives >= 0)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else
             GameOver();
     }
