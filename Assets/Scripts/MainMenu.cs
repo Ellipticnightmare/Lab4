@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("curScore", 0);
         PlayerPrefs.SetInt("BasicKill", 0);
         PlayerPrefs.SetInt("FastKill", 0);
+        PlayerPrefs.SetInt("liveN", 1);
         SceneManager.LoadScene("SampleScene");
     }
     public void HitQuit() => Application.Quit();

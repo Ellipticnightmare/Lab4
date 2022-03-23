@@ -8,12 +8,14 @@ public class GameManager : MonoBehaviour
 {
     public int score;
     public GameObject resultsUI;
-    int lives;
+    int lives, liveN;
     public enemyKillData[] enemyKillDataStorage;
     int basicEnemyKillCount, fastEnemyKillCount;
-    public Text RedEnemyKilled, RedEnemyScoreValue, GreenEnemyKilled, GreenEnemyScoreValue, TotalScoreValue;
+    public Text RedEnemyKilled, RedEnemyScoreValue, GreenEnemyKilled, GreenEnemyScoreValue, TotalScoreValue, scoreText;
+    public GameObject[] livesDisplay;
     private void Start()
     {
+        liveN = PlayerPrefs.GetInt("liveN");
         lives = PlayerPrefs.GetInt("Lives");
         score = PlayerPrefs.GetInt("Score");
         enemyKillDataStorage[0].enemyKillCount = PlayerPrefs.GetInt("BasicKill");
@@ -28,6 +30,23 @@ public class GameManager : MonoBehaviour
         GreenEnemyKilled.text = basicEnemyKillCount.ToString();
         GreenEnemyScoreValue.text = 150 + "";
         TotalScoreValue.text = score + "";
+        scoreText.text = score + "";
+
+        foreach (var item in livesDisplay)
+            item.SetActive(false);
+        for(int i = 1; i < lives; i++)
+        {
+            if (lives > 0)
+                livesDisplay[i - 1].SetActive(true);
+        }
+
+        if (score >= ((1500 * liveN) + (250 * liveN)))
+            GainLife();
+    }
+    public void GainLife()
+    {
+        liveN++;
+        lives++;
     }
     public static void TakeHit()
     {
@@ -43,6 +62,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Score", score);
         PlayerPrefs.SetInt("BasicKill", basicEnemyKillCount);
         PlayerPrefs.SetInt("FastKill", fastEnemyKillCount);
+        PlayerPrefs.SetInt("liveN", liveN);
         if (lives >= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else
@@ -65,6 +85,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("BasicKill", 0);
         PlayerPrefs.SetInt("FastKill", 0);
+        PlayerPrefs.SetInt("liveN", 1);
         SceneManager.LoadScene("SampleScene");
     }
     public void LoadMainMenu()
