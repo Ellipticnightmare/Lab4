@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public enemyKillData[] enemyKillDataStorage;
     [Header("DON'T ASSIGN")]
     public int basicEnemyKillCount, fastEnemyKillCount;
-    public GameObject results;
     private void Start()
     {
         lives = PlayerPrefs.GetInt("Lives");
@@ -23,15 +22,18 @@ public class GameManager : MonoBehaviour
     }
     public static void TakeHit()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (!PlayerController.isShield)
+            FindObjectOfType<GameManager>().KillPlayer();
+        else
+            PlayerController.isShield = false;
     }
-    public static void HitEnemy(int score)
+    public void KillPlayer()
     {
         lives--;
         PlayerPrefs.SetInt("Lives", lives);
         PlayerPrefs.SetInt("Score", score);
         if (lives >= 0)
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else
             GameOver();
     }
@@ -40,11 +42,11 @@ public class GameManager : MonoBehaviour
         if (score > PlayerPrefs.GetInt("HighScore"))
             PlayerPrefs.SetInt("HighScore", score);
         //Run Game Over logic here, for results screen and such, etc etc
-        results.SetActive(true);
     }
     public static void HitEnemy(int score, string enemyName)
     {
         score += score;
+        FindObjectOfType<GameManager>().UpdateKillData(enemyName);
     }
     public void UpdateKillData(string enemyName)
     {
@@ -53,13 +55,10 @@ public class GameManager : MonoBehaviour
         else
             enemyKillDataStorage[1].enemyKillCount++;
     }
-    public void CloseResults()
-    {
-        results.SetActive(false);
-    }
-    public void LoadMenu()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-        
-    }
+}
+[System.Serializable]
+public struct enemyKillData
+{
+    public string enemyName;
+    public int enemyKillCount;
 }
