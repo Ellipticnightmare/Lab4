@@ -25,7 +25,14 @@ public class EnemySpawner : MonoBehaviour
             int randSpawnPoint = Random.Range(0, spawnPoints.Length);
             
             GameObject enemyClone = Instantiate(enemyPrefabs[randEnemy], spawnPoints[randSpawnPoint].position, transform.rotation);
-            enemyClone.name = "enemy" + nextNameNumber;
+            if (randEnemy == 0)
+            {
+                enemyClone.name = "redenemy";
+            }
+            else
+            {
+                enemyClone.name = "greenenemy";
+            }
             enemyCount++;
             nextNameNumber++; 
         }
