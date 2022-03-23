@@ -47,7 +47,7 @@ public class PlayerController : ActorController
         else
             plyMove.Stop();
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SoundManager.fireSFX(shoot);
             fireBullet(firePoint);
