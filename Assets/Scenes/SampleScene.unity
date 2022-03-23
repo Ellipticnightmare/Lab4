@@ -2549,11 +2549,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResultsScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 8044048372741795011, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8044048372741795015, guid: 317135dedd4d7c344bdb32e22c491dbb,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2658,61 +2653,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373201593624, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373201593625, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373201593625, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373201593625, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReloadGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373201593625, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, NavMeshComponents
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485964, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485965, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485965, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485965, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485965, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, NavMeshComponents
-      objectReference: {fileID: 0}
-    - target: {fileID: 8044048373561485965, guid: 317135dedd4d7c344bdb32e22c491dbb,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 317135dedd4d7c344bdb32e22c491dbb, type: 3}
